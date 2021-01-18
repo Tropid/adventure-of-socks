@@ -198,8 +198,9 @@ class AnimatedSprite():
         self.ticks = 0
 
     def draw(self, pos):
+        frame = int((self.ticks / self.delay) % len(self.images))
         DISPLAYSURF.blit(
-            self.images[(self.ticks / self.delay) % len(self.images)], pos)
+            self.images[frame], pos)
         self.ticks = self.ticks + 1
 
 
